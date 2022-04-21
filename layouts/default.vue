@@ -12,7 +12,6 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Manrope:wght@300&display=swap");
 #app {
   font-family: "Josefin Slab", serif;
   background: #fcfcfc;

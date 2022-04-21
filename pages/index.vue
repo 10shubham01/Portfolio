@@ -3,12 +3,19 @@
     <v-row class="section">
       <v-col cols="12" xl="12" lg="12" md="12" sm="6" class="about">
         <p>
-          Hello I'm <b>Shubham</b>. A software engineer based in Mumbai, India.
-          Currently working at Credilio Financial Technologies Private Limited
+          Hello I'm <b style="color: red">Shubham</b>. A software engineer based
+          in Mumbai, India. Currently working at
+          <span class="credilio">
+            Credilio Financial Technologies Private Limited
+          </span>
           as Software Engineer. I specialise in creating interactive experiences
           and functional interfaces using
-          <b> Vue, React, Typescript JavaScript </b> and
-          <b> Design Systems </b>.
+          <b>
+            <span class="vue"> Vue</span>, <span class="react"> React</span>,
+            <span class="typescript"> Typescript</span>,
+            <span class="javascript"> JavaScript</span>
+          </b>
+          and <b> <span class="design-system"> Design Systems</span> </b>.
         </p>
       </v-col>
     </v-row>
@@ -94,6 +101,29 @@ export default {
   .about p {
     font-size: 4rem;
     overflow: hidden;
+    span {
+      cursor: pointer;
+    }
+    .react {
+      color: #1bd1f7;
+    }
+    .vue {
+      color: #3fb27f;
+    }
+    .typescript {
+      color: #2e74c0;
+    }
+    .javascript {
+      color: #ceb330;
+    }
+    .credilio {
+      color: #26479b;
+    }
+    .design-system {
+      background: linear-gradient(to right, #ff4a4a, #00aaff 70%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
     @media (max-width: 500px) {
       font-size: 1rem;
@@ -130,6 +160,7 @@ export default {
   font-size: 1rem;
   padding: 10px 30px;
   opacity: 1;
+  font-weight: bold;
   @media (max-width: 500px) {
     padding: 5px 10px;
   }
@@ -137,5 +168,11 @@ export default {
 h1 {
   font-size: 1.4rem;
   font-weight: normal;
+  transition-duration: 0.3s;
+  &:hover {
+    font-weight: bold;
+    letter-spacing: 5px;
+    cursor: pointer;
+  }
 }
 </style>
