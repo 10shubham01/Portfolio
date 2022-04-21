@@ -11,7 +11,7 @@ export default {
   name: "DefaultLayout",
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 #app {
   font-family: "Josefin Slab", serif;
   background: #fcfcfc;
@@ -20,5 +20,8 @@ export default {
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
+  @media (max-width: 768px) {
+    font-weight: bold !important;
+  }
 }
 </style>
