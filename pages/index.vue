@@ -37,7 +37,7 @@
               Marvel Heros,
             </span>
           </template>
-          <span class="project"
+          <span class="tooltip"
             >React, Bootstrap, CSS Modules, Marvel REST API</span
           >
         </v-tooltip>
@@ -95,6 +95,9 @@ export default {
 <style scoped lang="scss">
 .main {
   padding: 5% 1% 0% 5%;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   @media (max-width: 500px) {
     padding: 5% 5% 0% 5%;
   }
@@ -143,6 +146,10 @@ export default {
   .project {
     font-size: 4rem;
     cursor: pointer;
+    transition-delay: 0.2s;
+    &:hover {
+      font-weight: 600;
+    }
     @media (max-width: 500px) {
       font-size: 1rem;
     }
@@ -158,6 +165,7 @@ export default {
   background: #ffffff;
   color: #000000;
   font-size: 1rem;
+  letter-spacing: 2px;
   padding: 10px 30px;
   opacity: 1;
   font-weight: bold;
@@ -169,10 +177,12 @@ h1 {
   font-size: 1.4rem;
   font-weight: normal;
   transition-duration: 0.3s;
-  &:hover {
-    font-weight: bold;
-    letter-spacing: 5px;
-    cursor: pointer;
+  @media (min-width: 700px) {
+    &:hover {
+      font-weight: bold;
+      letter-spacing: 5px;
+      cursor: pointer;
+    }
   }
 }
 </style>
