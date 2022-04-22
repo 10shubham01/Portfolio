@@ -100,6 +100,7 @@ export default {
   user-select: none; /* Standard syntax */
   @media (max-width: 500px) {
     padding: 5% 5% 0% 5%;
+    text-align: center;
   }
   .about p {
     font-size: 4rem;
