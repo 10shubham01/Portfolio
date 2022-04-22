@@ -4,7 +4,7 @@
       <v-switch
         width="100%"
         v-model="theme"
-        color="orange darken-3"
+        color="red"
         hide-details
         @change="switchTheme"
       ></v-switch>
@@ -25,3 +25,5 @@ export default {
   },
 };
 </script>
+<style scoped>
+</style>

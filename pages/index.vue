@@ -129,7 +129,7 @@ export default {
     }
 
     @media (max-width: 500px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
       padding: 0 0 0 0;
     }
   }
@@ -137,7 +137,7 @@ export default {
   .social {
     font-size: 4rem;
     @media (max-width: 500px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
   .social {
@@ -151,7 +151,7 @@ export default {
       font-weight: 600;
     }
     @media (max-width: 500px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
   .section {
@@ -164,7 +164,7 @@ export default {
 .v-tooltip__content {
   background: #ffffff;
   color: #000000;
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   padding: 10px 30px;
   opacity: 1;
