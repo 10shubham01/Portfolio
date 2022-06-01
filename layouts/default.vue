@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main :class="theme ? 'dark' : 'light'">
-      <Header @theme="switchThetheme($event)" />
+      <!-- <Header @theme="switchThetheme($event)" /> -->
       <Loading v-if="loading" />
       <Nuxt v-else />
     </v-main>
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       theme: false,
-      loading: true,
+      loading: false,
     };
   },
   mounted() {
@@ -39,6 +39,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$background: #e0e0e0;
+$secondary: salmon;
 #app {
   font-family: "Josefin Slab", serif;
   padding: 0;
@@ -53,9 +55,15 @@ export default {
     color: #ffffff !important;
     transition-delay: 0.3s;
   }
+  // .light {
+  //   background-color: #fcfcfc;
+  //   color: #000000;
+  //   transition-delay: 0.3s;
+  // }
   .light {
-    background-color: #fcfcfc;
-    color: #000000;
+    background: $background;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     transition-delay: 0.3s;
   }
 }

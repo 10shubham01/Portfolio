@@ -1,10 +1,10 @@
 <template>
-  <v-row class="main">
+  <v-row class="main font">
     <v-row class="section">
       <v-col cols="12" xl="12" lg="12" md="12" sm="6" class="about">
-        <p>
-          Hello I'm <b style="color: red">Shubham</b>. A software engineer based
-          in Mumbai, India. Currently working at
+        <p class="">
+          Hello I'm <b class="name">Shubham</b>. A software engineer based in
+          Mumbai, India. Currently working at
           <span class="credilio">
             Credilio Financial Technologies Private Limited
           </span>
@@ -23,7 +23,8 @@
       <v-col cols="12" xl="12" lg="12" md="12" sm="6">
         <h1>CAN SPEAK AND UNDERSTAND</h1>
         <p class="skills">
-          Javascript, Typescript, NodeJs, HTML, CSS, SCSS, C, C++, Python
+          Javascript, Typescript, NodeJs, HTML, CSS, SCSS, C, C++, Python,
+          Hindi, English
         </p>
       </v-col>
     </v-row>
@@ -93,40 +94,62 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+$background: #e0e0e0;
+$secondary: salmon;
 .main {
   padding: 5% 1% 0% 5%;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  font-weight: bold;
   @media (max-width: 500px) {
     padding: 5% 5% 0% 5%;
     text-align: center;
   }
   .about p {
     font-size: 4rem;
-    overflow: hidden;
+    // overflow: hidden;
     span {
       cursor: pointer;
+      transition: 0.3s;
     }
     .react {
-      color: #1bd1f7;
+      &:hover {
+        color: #1bd1f7;
+      }
     }
     .vue {
-      color: #3fb27f;
+      &:hover {
+        color: #3fb27f;
+      }
     }
     .typescript {
-      color: #2e74c0;
+      &:hover {
+        color: #2e74c0;
+      }
     }
     .javascript {
-      color: #ceb330;
+      &:hover {
+        color: #ceb330;
+      }
     }
     .credilio {
-      color: #26479b;
+      &:hover {
+        color: #26479b;
+      }
+    }
+    .name {
+      cursor: pointer;
+      &:hover {
+        color: $secondary;
+      }
     }
     .design-system {
-      background: linear-gradient(to right, #ff4a4a, #00aaff 70%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      &:hover {
+        background: linear-gradient(to right, #ff4a4a, #00aaff 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
 
     @media (max-width: 500px) {
@@ -147,9 +170,10 @@ export default {
   .project {
     font-size: 4rem;
     cursor: pointer;
-    transition-delay: 0.2s;
     &:hover {
-      font-weight: 600;
+      @media (min-width: 700px) {
+        letter-spacing: 5px;
+      }
     }
     @media (max-width: 500px) {
       font-size: 1.5rem;
@@ -176,7 +200,7 @@ export default {
 }
 h1 {
   font-size: 1.4rem;
-  font-weight: normal;
+  font-weight: bold;
   transition-duration: 0.3s;
   @media (min-width: 700px) {
     &:hover {
@@ -185,5 +209,28 @@ h1 {
       cursor: pointer;
     }
   }
+}
+@mixin shadow($color, $steps, $glow) {
+  $all: ();
+  $all: append($all, -1px 1px 0 rgba($color, 0.1), comma);
+  $all: append($all, 1px -1px 0 rgba($glow, 0.1), comma);
+  $all: append($all, 1px -1px 150px $glow, comma);
+  @for $i from 1 through $steps {
+    $all: append(
+      $all,
+      append($i * -1px $i * 1.9px $i * 1px, rgba($color, 4 / $i))
+    );
+  }
+  text-shadow: $all;
+}
+
+.font,
+.font span {
+  transition: 0.2s;
+}
+
+.font {
+  color: $background;
+  @include shadow(darken($background, 20%), 25, white);
 }
 </style>
